@@ -19,4 +19,36 @@ public class Task {
     private LocalDateTime created;
 
     private boolean done;
+
+    public int getId() {
+        return id;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public LocalDateTime getCreated() {
+        return created;
+    }
+
+    public boolean isDone() {
+        return done;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public void setCreated(LocalDateTime created) {
+        this.created = created;
+    }
+
+    public void setDone(boolean done) {
+        this.done = done;
+    }
 }

@@ -1,23 +1,29 @@
 package com.digitazon.TodoList.controllers;
 
+import com.digitazon.TodoList.entities.Task;
 import com.digitazon.TodoList.repositories.TaskRepository;
-import org.springframework.web.bind.annotation.Mapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.*;
 
 @RestController
+@RequestMapping("/tasks")
 public class TaskController {
+    @Autowired
     private TaskRepository taskRepository;
 
-    public TaskController(TaskRepository taskRepository) {
+    /*public TaskController(TaskRepository taskRepository) {
         this.taskRepository = taskRepository;
-    }
+    }*/
 
     @RequestMapping(value = "/", method = RequestMethod.GET)
-    public String home() {
-        long totale = taskRepository.count();
-        System.out.println(totale);
-        return "Benvenuti!";
+    public Iterable<Task> home() {
+        Iterable<Task> tasks = taskRepository.findAll();
+        return tasks;
+
+    }
+
+    @GetMapping("/{id}")
+    public Task read(@PathVariable int id) {
+        return taskRepository.findById(id).orElseThrow();
     }
 }
