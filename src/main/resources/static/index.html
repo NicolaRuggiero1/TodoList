@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/todolistbootstrap.min.css">
+    <link rel="stylesheet" href="css/todolist.css">
+    <link rel="stylesheet" href="icons/style.css">
+    <title>Document</title>
+</head>
+
+<body>
+    
+    <div id="container">
+        <div id="title">
+            <!--<img src="/image/Logo_500x500_px__2_-removebg-preview.png" alt="">-->
+            <h1><b> TO DO</b> LIST</h1>
+        </div>
+        <div id="barra" class="input-group mb-3">
+            <input id="task-content" type="text" class="form-control btn-lg" placeholder="scrivi promemoria">
+            <select name="types" id="select">
+            </select>
+            <div class="input-group-append">
+                <button id="task-add-button" class="btn btn-success " type="button">+</button>
+            </div>
+        </div>
+        <div id="tasks-list" class="text-position row">
+            
+        </div>
+        <div>
+            <button id="delete-all" class="btn btn-primary">Elimina tutto</button>
+        </div>
+        <div id="counters">
+            <span>task totali</span>
+            <span id="task-all-counter"></span>
+            <span>/</span>
+            <span>task svolti</span>
+            <span id="task-done-counter"></span>
+        </div>
+    </div>
+    <script src="js/todolist.js"></script>
+</body>
+
+</html>

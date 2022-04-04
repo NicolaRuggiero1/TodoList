@@ -14,11 +14,15 @@ public class Task {
     private int id;
 
     private String name;
-
-
     private LocalDateTime created;
-
     private boolean done;
+    @ManyToOne
+    @JoinColumn(name = "category_id")
+    private Category category;
+
+    public Category getCategory() {
+        return category;
+    }
 
     public int getId() {
         return id;
@@ -30,6 +34,10 @@ public class Task {
 
     public LocalDateTime getCreated() {
         return created;
+    }
+
+    public void setCategory(Category category) {
+        this.category = category;
     }
 
     public boolean isDone() {
